@@ -92,7 +92,7 @@ form input[type="checkbox"]:checked {
   font-size: 0.7rem;
 }
 
-.checkbox {
+label.checkbox {
   display: flex;
   margin: 3.5rem 0;
 }
@@ -108,7 +108,7 @@ label[for="terms"] {
   align-items: center;
 }
 
-.join-now {
+.join-now, input[type="submit"].join-now {
   border: none;
   margin: 0;
   font-size: 1.3rem;

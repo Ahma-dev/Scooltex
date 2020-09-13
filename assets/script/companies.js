@@ -10,6 +10,8 @@ const DOMElements = {
   mobileNavAccount: document.querySelector(".mobile-nav__myaccount"),
   pagesNav: document.querySelector(".pages-nav"),
   closeAccountNav: document.querySelector(".close-account-nav"),
+  year: document.querySelector("footer template"),
+  copyright: document.querySelector(".copywright p"),
 };
 
 const navBtnHandler = () => {
@@ -99,6 +101,12 @@ DOMElements.mobileNavAccount.addEventListener(
   myMobileAccountBtnHandler
 );
 
+// Add date to DOM
+let date = new Date();
+let currYear = document.createElement("span");
+currYear.textContent = date.getFullYear();
+
+DOMElements.copyright.replaceChild(currYear, DOMElements.year);
 
 // Get name of file uploaded and render it in the DOM
 let fileInput = document.querySelectorAll(".upload");

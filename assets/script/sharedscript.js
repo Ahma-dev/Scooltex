@@ -16,6 +16,8 @@ const DOMElements = {
   activeCarousel: document.querySelector(".carousel-item.active"),
   activeIndicator: document.querySelector(".indicator.active"),
   orderBtn: document.querySelectorAll(".order-btn"),
+  year: document.querySelector("footer template"),
+  copyright: document.querySelector(".copywright p"),
 };
 
 // Make navbar sticky
@@ -36,10 +38,9 @@ window.onscroll = function () {
   stickyNavHandler();
 };
 
-
-/********************************************/ 
+/********************************************/
 /************Carousel Controller*************/
-/********************************************/ 
+/********************************************/
 
 console.log(DOMElements.activeCarousel);
 
@@ -67,9 +68,9 @@ function showSlide(slideIndex, clicked) {
   currentSlide++;
 }
 
-/***************************************************/ 
+/***************************************************/
 /************Mobile Carousel Controller*************/
-/***************************************************/ 
+/***************************************************/
 
 var xDown = null;
 var yDown = null;
@@ -108,30 +109,28 @@ function handleTouchMove(evt) {
 
       DOMElements.activeCarousel.classList.remove("active");
       DOMElements.activeIndicator.classList.remove("active");
-    
+
       DOMElements.slides[currentSlide].classList.add("active");
       DOMElements.indicators[currentSlide].classList.add("active");
-    
+
       DOMElements.activeCarousel = DOMElements.slides[currentSlide];
       DOMElements.activeIndicator = DOMElements.indicators[currentSlide];
-    
     } else {
       /* right swipe */
       currentSlide--;
-      
+
       if (currentSlide < 0) {
         currentSlide = DOMElements.slides.length;
         console.log("reset");
       }
       DOMElements.activeCarousel.classList.remove("active");
       DOMElements.activeIndicator.classList.remove("active");
-    
+
       DOMElements.slides[currentSlide].classList.add("active");
       DOMElements.indicators[currentSlide].classList.add("active");
-    
+
       DOMElements.activeCarousel = DOMElements.slides[currentSlide];
       DOMElements.activeIndicator = DOMElements.indicators[currentSlide];
-    
     }
   }
   /* reset values */
@@ -306,3 +305,10 @@ DOMElements.mobileNavAccount.addEventListener(
 DOMElements.orderBtn.forEach((btn) =>
   btn.addEventListener("click", orderBtnHandler.bind(null, btn))
 );
+
+// Add date to DOM
+let date = new Date();
+let currYear = document.createElement("span");
+currYear.textContent = date.getFullYear();
+
+DOMElements.copyright.replaceChild(currYear, DOMElements.year);
