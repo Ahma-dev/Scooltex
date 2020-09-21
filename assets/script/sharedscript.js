@@ -306,6 +306,7 @@ DOMElements.orderBtn.forEach((btn) =>
   btn.addEventListener("click", orderBtnHandler.bind(null, btn))
 );
 
+
 // Add date to DOM
 let date = new Date();
 let currYear = document.createElement("span");

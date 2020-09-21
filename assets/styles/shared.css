@@ -777,6 +777,47 @@ address {
   font-weight: 600;
 }
 
+#cookies {
+  padding: 8px 13px;
+  display: flex;
+  justify-content: space-between;
+  width: 19.5rem;
+  background-color: #ffffff;
+  /* box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.164); */
+  /* margin: 4rem auto; */
+  border-radius: 11px;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+}
+
+
+#cookies p {
+  color: #BA0C2E;
+  font-size: 0.8rem;
+  text-align: left;
+  margin: 0;
+}
+
+#cookies .cancel-icon {
+  width: 1rem;
+  height: 1rem;
+  /* background-color: #BA0C2E; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+#cookies svg {
+    width: 100%;
+    color: #BA0C2E;
+}
+
 @media (max-width: 780px) {
   .topmost-bar {
     display: flex;

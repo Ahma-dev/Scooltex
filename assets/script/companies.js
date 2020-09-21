@@ -12,6 +12,7 @@ const DOMElements = {
   closeAccountNav: document.querySelector(".close-account-nav"),
   year: document.querySelector("footer template"),
   copyright: document.querySelector(".copywright p"),
+  cookies: document.getElementById("cookies")
 };
 
 const navBtnHandler = () => {
@@ -123,5 +124,12 @@ fileInput.forEach((el) => {
   };
 });
 
-const fileName = fileInput[0].parentNode.querySelector(".file-name");
-console.log(fileName);
+// const fileName = fileInput[0].parentNode.querySelector(".file-name");
+// console.log(fileName);
+
+// Close cookies div
+if (!!DOMElements.cookies) {
+  DOMElements.cookies.querySelector(".cancel-icon").addEventListener('click', () => {
+    DOMElements.cookies.style.display = 'none';
+  })
+}
